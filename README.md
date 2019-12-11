@@ -37,3 +37,11 @@ Todo:
 - [ ] cmd command
 - [ ] Sending email (for whatever reason)
 - [ ] Validate models and rest endpoints
+- [ ] Integrate gRPC module
+- [ ] Dataloader for gql
+- [ ] Repository cache 
+- [ ] Stress test
+- [ ] Instrumentation test
+- [ ] Integration test
+- [ ] Regression test
+- [ ] Sanitize input fields
