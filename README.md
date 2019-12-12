@@ -17,10 +17,10 @@ Technologies used
 
 Todo:
 - [ ] Create user
+- [ ] Each recipe should have photo, ingredients, description, time for prep
 - [ ] login (use JWT and session cookie)
 - [ ] Add avatar
 - [ ] login with FB/Twitter, etc (this may be client feature)
-- [ ] Each recipe should have photo, ingredients, description, time for prep
 - [ ] Add recipe
 - [ ] Get recipe
 - [ ] Edit recipe
