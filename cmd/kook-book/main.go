@@ -27,7 +27,9 @@ func main() {
 	res := graphql.NewResolver(env)
 
 	// TODO: remove this
-	http.Handle("/", handler.Playground("GraphQL playground", "/query"))
+	http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
+		w.Write(services.Page)
+	})
 
 	http.Handle("/query", handler.GraphQL(graphql.NewExecutableSchema(graphql.Config{Resolvers: res})))
 

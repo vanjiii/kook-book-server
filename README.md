@@ -51,3 +51,4 @@ TODO:
 - [ ] Integration test
 - [ ] Regression test
 - [ ] Sanitize input fields
+- [ ] Make the Graphiql libs versions variables
