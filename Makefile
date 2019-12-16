@@ -1,11 +1,12 @@
 COVER ?= coverage.html
 
-all: clean dep migrate build
+all: clean migrate build
 
 migrate: ## Executes database migration.
 	goose -dir ./pkg/migrations postgres "dbname=kookbook sslmode=disable" up
 
 build: ## Build binary file.
+	go generate ./...
 	go install ./...
 
 dep: ## Install dependencies.
@@ -14,7 +15,7 @@ dep: ## Install dependencies.
 	which goose > /dev/null || go get github.com/pressly/goose/cmd/goose@v2.6.0
 	which staticcheck > /dev/null || go get honnef.co/go/tools/cmd/staticcheck@2019.2.3
 
-test:
+test: dep
 	go test -coverprofile=coverage.out -covermode=count ./...
 	go vet ./...
 	staticcheck ./...
