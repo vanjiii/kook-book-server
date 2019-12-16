@@ -15,7 +15,7 @@ Technologies used
 - make
 - docker images
 
-Todo:
+TODO:
 - [ ] Create user
 - [ ] Each recipe should have photo, ingredients, description, time for prep
 - [ ] login (use JWT and session cookie)
@@ -28,6 +28,12 @@ Todo:
 - [ ] Maybe raking of difficulty of preparation
 - [ ] List All (search option)
 - [ ] List my recipes
+- [ ] Advanced GQL
+  - [ ] connections
+  - [ ] unions
+  - [ ] interfaces
+  - [ ] enums
+  - [ ] Extract that gql to main (Playground, /query)
 - [ ] Extract recipe - by input (usually url) extract the recipe if any
 - [ ] Comment on recipe
 - [ ] Upvote recipe (Maybe add ranking)
