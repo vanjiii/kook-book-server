@@ -26,7 +26,6 @@ func main() {
 
 	res := graphql.NewResolver(env)
 
-	// TODO: remove this
 	http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
 		w.Write(services.Page)
 	})
