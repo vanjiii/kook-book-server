@@ -16,7 +16,7 @@ func NewHandler(db *gorm.DB) *Handler {
 	}
 }
 
-func CreateUser() error {
+func (h *Handler) CreateUser() error {
 	log.Println("I am creating a user")
 	return nil
 }

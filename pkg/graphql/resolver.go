@@ -5,8 +5,11 @@ package graphql
 import (
 	"context"
 
+	"vanjiii/kook-book-server/pkg"
 	"vanjiii/kook-book-server/pkg/auth"
 	"vanjiii/kook-book-server/pkg/services"
+
+	"github.com/google/uuid"
 )
 
 type Resolver struct {
@@ -30,10 +33,14 @@ func (r *Resolver) Query() QueryResolver {
 	return &queryResolver{r}
 }
 
-func (r *mutationResolver) CreateUser(ctx context.Context, input NewUser) (*User, error) {
-	panic("not implemented")
+func (r *mutationResolver) CreateUser(ctx context.Context, email, password string) (*Message, error) {
+	if err := r.auth.CreateUser(); err != nil {
+		return msgErr, err
+	}
+
+	return msgOK, nil
 }
 
-func (r *queryResolver) GetUser(ctx context.Context, ID int) (*User, error) {
+func (r *queryResolver) GetUser(ctx context.Context, ID uuid.UUID) (*pkg.User, error) {
 	panic("not implemented")
 }

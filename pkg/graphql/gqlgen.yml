@@ -8,3 +8,8 @@ resolver:
   filename: resolver.go
   type: Resolver
 autobind: []
+models:
+  ID:
+    model: vanjiii/kook-book-server/pkg/graphql.UUID
+  User:
+    model: vanjiii/kook-book-server/pkg.User

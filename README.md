@@ -15,6 +15,12 @@ Technologies used
 - make
 - docker images
 
+Blogposts ideas:
+- Structure - what, where, why
+- Storing passwords:
+  - choosing to encrypt server level(remove server DB connection exploit; remove load of the DB - that encryption process should happen on the server)
+  - bcrypt, argon2
+
 TODO:
 - [ ] Create user
 - [ ] Each recipe should have photo, ingredients, description, time for prep
@@ -33,6 +39,7 @@ TODO:
   - [ ] unions
   - [ ] interfaces
   - [ ] enums
+  - [ ] APQ
   - [ ] Extract that gql to main (Playground, /query)
 - [ ] Extract recipe - by input (usually url) extract the recipe if any
 - [ ] Comment on recipe
