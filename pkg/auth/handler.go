@@ -1,6 +1,7 @@
 package auth
 
 import (
+	"context"
 	"log"
 
 	"github.com/jinzhu/gorm"
@@ -16,7 +17,7 @@ func NewHandler(db *gorm.DB) *Handler {
 	}
 }
 
-func (h *Handler) CreateUser() error {
+func (h *Handler) CreateUser(ctx context.Context, email, password string) error {
 	log.Println("I am creating a user")
 	return nil
 }

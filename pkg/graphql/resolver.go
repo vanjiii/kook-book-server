@@ -34,7 +34,7 @@ func (r *Resolver) Query() QueryResolver {
 }
 
 func (r *mutationResolver) CreateUser(ctx context.Context, email, password string) (*Message, error) {
-	if err := r.auth.CreateUser(); err != nil {
+	if err := r.auth.CreateUser(ctx, email, password); err != nil {
 		return msgErr, err
 	}
 
