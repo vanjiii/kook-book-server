@@ -3,6 +3,8 @@ package pkg
 import (
 	"time"
 
+	"vanjiii/kook-book-server/pkg/errors"
+
 	"github.com/google/uuid"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -34,6 +36,7 @@ func (u *User) SetPassword(password string) error {
 	}
 
 	u.Password = hash
+	return nil
 }
 
 func validatePassword(password string) bool {
