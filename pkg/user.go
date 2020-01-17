@@ -18,8 +18,8 @@ type User struct {
 	Password []byte
 
 	CreatedAt time.Time
-	UpdateAt  time.Time
-	DeletedAt time.Time
+	UpdatedAt time.Time
+	DeletedAt *time.Time
 }
 
 func (u User) TableName() string {

@@ -2,7 +2,7 @@ package auth
 
 import (
 	"context"
-	"log"
+	"vanjiii/kook-book-server/pkg"
 
 	"github.com/jinzhu/gorm"
 )
@@ -18,6 +18,8 @@ func NewHandler(db *gorm.DB) *Handler {
 }
 
 func (h *Handler) CreateUser(ctx context.Context, email, password string) error {
-	log.Println("I am creating a user")
-	return nil
+	user := pkg.User{Email: email}
+	user.SetPassword(password)
+
+	return h.db.Debug().Create(&user).Error
 }
