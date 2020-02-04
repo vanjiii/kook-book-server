@@ -3,22 +3,18 @@ package graphql
 import (
 	"context"
 	"testing"
-
-	"vanjiii/kook-book-server/pkg/services"
 )
 
 func TestUser(t *testing.T) {
 	ctx := context.Background()
-	env, err := services.NewEnv()
-	if err != nil {
-		t.Fata
-	}
+	env, cleanup := NewTestEnv(t)
+	defer cleanup()
 
 	RunGraphqlTest(t, &GraphqlTestEnv{
 		Context:  ctx,
 		Resolver: NewResolver(env),
-		Query:    `query{GetUser(){ID}}`,
-		Result:   `"getUser": User{1}`,
+		Query:    `mutation{createUser(email: "ivan@dim.dev", password: "1234"){Message}}`,
+		Result:   `{"createUser": {"Message": "Success!"}}`,
 		Errors:   []string{},
 	})
 }

@@ -21,5 +21,5 @@ func (h *Handler) CreateUser(ctx context.Context, email, password string) error 
 	user := pkg.User{Email: email}
 	user.SetPassword(password)
 
-	return h.db.Debug().Create(&user).Error
+	return h.db.Create(&user).Error
 }

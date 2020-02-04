@@ -16,16 +16,18 @@ type Env struct {
 	AuthHandler *auth.Handler
 }
 
+// NewEnv creates new DB and Env types.
 func NewEnv() (*Env, error) {
 	db, err := gorm.Open("postgres", gormString("kookbook"))
 	if err != nil {
 		log.Fatalf("fail to create a db connection: %v", err)
 	}
 
-	return newEnv(db), err
+	return CreateEnv(db), err
 }
 
-func newEnv(db *gorm.DB) *Env {
+// CreateEnv Creates new env with that `db`.
+func CreateEnv(db *gorm.DB) *Env {
 	ah := auth.NewHandler(db)
 
 	return &Env{

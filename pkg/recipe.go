@@ -10,7 +10,7 @@ type Recipe struct {
 	ID uuid.UUID
 
 	Photo       string
-	Ingredients []string
+	Ingredients []Ingredient
 	Description string
 	PrepTime    time.Time
 

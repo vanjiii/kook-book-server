@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"strings"
 	"testing"
+	"vanjiii/kook-book-server/pkg/services"
+	"vanjiii/kook-book-server/pkg/test"
 
 	"github.com/99designs/gqlgen/client"
 	"github.com/99designs/gqlgen/handler"
@@ -41,6 +43,14 @@ func RunGraphqlTest(t *testing.T, test *GraphqlTestEnv) {
 		t.Logf("want: %s", want)
 		t.Fail()
 	}
+}
+
+func NewTestEnv(t *testing.T) (*services.Env, func()) {
+	db, cleanup := test.NewDB(t)
+
+	env := services.CreateEnv(db)
+
+	return env, cleanup
 }
 
 // exec executes the actual request
