@@ -59,3 +59,6 @@ TODO:
 - [ ] Regression test
 - [ ] Sanitize input fields
 - [ ] Make the Graphiql libs versions variables
+
+Nice resource: 
+https://github.com/oshalygin/gqlgen-pg-todo-example/
