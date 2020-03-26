@@ -59,6 +59,8 @@ TODO:
 - [ ] Regression test
 - [ ] Sanitize input fields
 - [ ] Make the Graphiql libs versions variables
+- [ ] destroy DB on t.Defer()
+- [ ] update golang
 
 Nice resource: 
 https://github.com/oshalygin/gqlgen-pg-todo-example/
