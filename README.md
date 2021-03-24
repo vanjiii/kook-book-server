@@ -1,5 +1,9 @@
+**-- > Nothing to see here, walk away <--**
+
 # kook-book-server
-Simple recipe book
+Simple recipe book.
+
+The goal of the project it to practice and sharp my web development skills.
 
 ## Installation
 
@@ -41,7 +45,7 @@ TODO:
   - [ ] enums
   - [ ] APQ
   - [ ] Extract that gql to main (Playground, /query)
-- [ ] Extract recipe - by input (usually url) extract the recipe if any
+- [ ] Extract recipe - by input (usually url) extract the recipe if any 
 - [ ] Comment on recipe
 - [ ] Upvote recipe (Maybe add ranking)
 - [ ] Categories (aka tags)
