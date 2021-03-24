@@ -61,6 +61,7 @@ TODO:
 - [ ] Make the Graphiql libs versions variables
 - [ ] destroy DB on t.Defer()
 - [ ] update golang
+- [ ] explore [statik](https://github.com/rakyll/statik)
 
 Nice resource: 
 https://github.com/oshalygin/gqlgen-pg-todo-example/
