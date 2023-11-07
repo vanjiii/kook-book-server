@@ -1,13 +1,11 @@
-package pkg
+package recipe
 
 import (
 	"time"
-
-	"github.com/google/uuid"
 )
 
 type Ingredient struct {
-	ID uuid.UUID
+	ID uint
 
 	Name     string
 	Quantity string

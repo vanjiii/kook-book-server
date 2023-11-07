@@ -1,18 +1,16 @@
-package pkg
+package recipe
 
 import (
 	"time"
-
-	"github.com/google/uuid"
 )
 
 type Recipe struct {
-	ID uuid.UUID
+	ID uint
 
 	Photo       string
 	Ingredients []Ingredient
 	Description string
-	PrepTime    time.Time
+	PrepTime    time.Duration
 
 	CreatedAt time.Time
 	UpdateAt  time.Time

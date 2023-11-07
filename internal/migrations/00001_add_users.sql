@@ -8,7 +8,7 @@ CREATE TABLE users (
         password BYTEA NOT NULL,
         name TEXT,
         avatar TEXT,
-        
+
 	created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
 	updated_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
 	deleted_at TIMESTAMP WITH TIME ZONE

@@ -1,37 +1,19 @@
 package main
 
 import (
-	"log"
 	"net/http"
-	"os"
 
-	"vanjiii/kook-book-server/pkg/graphql"
-	"vanjiii/kook-book-server/pkg/services"
+	"github.com/go-chi/chi/v5"
 
-	"github.com/99designs/gqlgen/handler"
+	"vanjiii/kook-book-server/internal/api"
 )
 
-const defaultPort = "8080"
-
 func main() {
-	env, err := services.NewEnv()
-	if err != nil {
-		log.Fatalf("error occurs on creating environment: %v", err)
-	}
+	r := chi.NewRouter()
 
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = defaultPort
-	}
+	// r.Use(middleware.Logger)
 
-	res := graphql.NewResolver(env)
+	api.RegisterRoutes(r)
 
-	http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
-		w.Write(services.Page)
-	})
-
-	http.Handle("/query", handler.GraphQL(graphql.NewExecutableSchema(graphql.Config{Resolvers: res})))
-
-	log.Printf("connect to http://localhost:%s/ for GraphQL playground", port)
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	http.ListenAndServe(":3000", r)
 }
