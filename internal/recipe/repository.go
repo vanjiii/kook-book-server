@@ -1,5 +1,7 @@
 package recipe
 
+import "time"
+
 type store map[uint]Recipe
 
 type Repository struct {
@@ -8,7 +10,21 @@ type Repository struct {
 
 func NewRepository() *Repository {
 	return &Repository{
-		store: store{},
+		store: store{
+			uint(42): Recipe{
+				ID:          42,
+				Photo:       "/9j/4AAQSkZJRgABAQAAZABkAAD/2wCEABQQEBkSGScXFycyJh8mMi4mJiYmLj41NTU1NT5EQUFBQUFBREREREREREREREREREREREREREREREREREREREQBFRkZIBwgJhgYJjYmICY2RDYrKzZERERCNUJERERERERERERERERERERERERERERERERERERERERERERERERERP/AABEIAAEAAQMBIgACEQEDEQH/xABMAAEBAAAAAAAAAAAAAAAAAAAABQEBAQAAAAAAAAAAAAAAAAAABQYQAQAAAAAAAAAAAAAAAAAAAAARAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJQA9Yv/2Q==",
+				Description: "Exampler description",
+				PrepTime:    10 * time.Minute,
+				Ingredients: []Ingredient{
+					{
+						ID:       42,
+						Name:     "Raspberry",
+						Quantity: "2 pcs",
+					},
+				},
+			},
+		},
 	}
 }
 

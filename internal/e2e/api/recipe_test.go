@@ -8,7 +8,7 @@ import (
 
 	"vanjiii/kook-book-server/internal/e2e"
 
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestApi_Live(t *testing.T) {
@@ -26,23 +26,26 @@ func TestApi_Live(t *testing.T) {
 		scode    int
 	}{
 		{
-			name:     "default",
-			endpoint: fmt.Sprintf("http://%s/health-check", cfg.APIListenAddress),
-			scode:    200,
+			name:     "get",
+			endpoint: fmt.Sprintf("http://%s/api/v1/recipe/%d", cfg.APIListenAddress, 42),
+			scode:    http.StatusOK,
 		},
 	}
 
 	for _, tcase := range cases {
 		t.Run(tcase.name, func(t *testing.T) {
-			_, statusCode, err := httpcl.DoRequest(
+			require := require.New(t)
+
+			resp, statusCode, err := httpcl.DoRequest(
 				ctx,
 				tcase.endpoint,
 				http.MethodGet,
 				nil,
 			)
 
-			assert.NoError(t, err)
-			assert.Equal(t, tcase.scode, statusCode)
+			require.NoError(err)
+			require.Equal(tcase.scode, statusCode)
+			require.Contains(string(resp), "Exampler description")
 		})
 	}
 }
