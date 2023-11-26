@@ -6,13 +6,22 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
 	"syscall"
 	"testing"
 )
 
-var pkg = "vanjiii/kook-book-server"
+var (
+	pkg = "vanjiii/kook-book-server"
+
+	status = 0
+)
 
 func TestMain(m *testing.M) {
+	defer func() {
+		os.Exit(status)
+	}()
+
 	binpath := gobuild()
 
 	defer os.Remove(binpath)
@@ -43,7 +52,9 @@ func TestMain(m *testing.M) {
 		_ = cmd.Wait()
 	}(cmd)
 
-	os.Exit(m.Run())
+	status = m.Run()
+
+	runtime.Goexit()
 }
 
 func gobuild() string {
