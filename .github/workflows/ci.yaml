@@ -1,9 +1,6 @@
 name: on-push
 run-name: on-push workflow is running...
-on:
-  push:
-    branches-ignore:
-      - master
+on: [push]
 
 jobs:
   pre-build:
