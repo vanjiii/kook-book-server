@@ -14,6 +14,7 @@ var deadline = time.Now().Add(10 * time.Second)
 func BootsUpServer(t *testing.T, cl *client, addr string) {
 	t.Helper()
 
+	//nolint:staticcheck
 	var err = errors.New("fail to start server")
 
 	for {

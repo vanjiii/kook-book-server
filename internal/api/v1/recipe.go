@@ -33,6 +33,7 @@ func (h *RecipeHandler) Get(w http.ResponseWriter, r *http.Request) {
 	if idstr == "" {
 		w.WriteHeader(http.StatusBadRequest)
 
+		//nolint
 		json.NewEncoder(w).Encode(httpx.APIResponse{
 			Code:  http.StatusBadRequest,
 			Error: "missing id",
@@ -45,6 +46,7 @@ func (h *RecipeHandler) Get(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 
+		//nolint
 		json.NewEncoder(w).Encode(httpx.APIResponse{
 			Code:  http.StatusBadRequest,
 			Error: "bad id",
@@ -57,6 +59,7 @@ func (h *RecipeHandler) Get(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 
+		//nolint
 		json.NewEncoder(w).Encode(httpx.APIResponse{
 			Code:  http.StatusInternalServerError,
 			Error: err.Error(),
@@ -76,6 +79,7 @@ func (h *RecipeHandler) Get(w http.ResponseWriter, r *http.Request) {
 	}); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 
+		//nolint
 		json.NewEncoder(w).Encode(httpx.APIResponse{
 			Code:  http.StatusInternalServerError,
 			Error: err.Error(),
@@ -98,6 +102,7 @@ func (h *RecipeHandler) Create(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 
+		//nolint
 		json.NewEncoder(w).Encode(httpx.APIResponse{
 			Code:  http.StatusBadRequest,
 			Error: err.Error(),
@@ -111,6 +116,7 @@ func (h *RecipeHandler) Create(w http.ResponseWriter, r *http.Request) {
 	if err := json.Unmarshal(body, &ent); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 
+		//nolint
 		json.NewEncoder(w).Encode(httpx.APIResponse{
 			Code:  http.StatusInternalServerError,
 			Error: err.Error(),
@@ -126,6 +132,7 @@ func (h *RecipeHandler) Create(w http.ResponseWriter, r *http.Request) {
 	}); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 
+		//nolint
 		json.NewEncoder(w).Encode(httpx.APIResponse{
 			Code:  http.StatusInternalServerError,
 			Error: err.Error(),

@@ -45,7 +45,7 @@ TODO:
   - [ ] enums
   - [ ] APQ
   - [ ] Extract that gql to main (Playground, /query)
-- [ ] Extract recipe - by input (usually url) extract the recipe if any 
+- [ ] Extract recipe - by input (usually url) extract the recipe if any
 - [ ] Comment on recipe
 - [ ] Upvote recipe (Maybe add ranking)
 - [ ] Categories (aka tags)
@@ -56,7 +56,7 @@ TODO:
 - [ ] Validate models and rest endpoints
 - [ ] Integrate gRPC module
 - [ ] Dataloader for gql
-- [ ] Repository cache 
+- [ ] Repository cache
 - [ ] Stress test
 - [ ] Instrumentation test
 - [ ] Integration test
@@ -67,5 +67,5 @@ TODO:
 - [ ] update golang
 - [ ] explore [statik](https://github.com/rakyll/statik)
 
-Nice resource: 
+Nice resource:
 https://github.com/oshalygin/gqlgen-pg-todo-example/
