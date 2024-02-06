@@ -152,3 +152,25 @@ Cons:<br>
     - Relies on string ci/cd practices to maintain stability.
 
 ![trunk-based](./assets/trunk-based.png)
+
+## Microservices
+
+Six principles of microservices:
+
+- Rely on the public API;
+    - define version strategy;
+- Use the right tool for the job;
+- Secure your services;
+- Be good citizen with the ecosystem;
+    - Distributed monitoring and tracing
+    - Shared metrics
+    - Distributed tracing
+    - User-experience metrics
+- It's more than just technology transformation;
+    - two pizza rule
+- Automate everything
+    - Adopt Continuous delivery
+
+Conway's rule: any organization that designs a system (defined broadly) will
+produce a design whose structure is a copy of the organization's communication
+structure.
