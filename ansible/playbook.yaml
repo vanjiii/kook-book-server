@@ -1,0 +1,33 @@
+# what host do we target
+- hosts: localhost
+  # should we gather facts for the host
+  gather_facts: no
+  # Ansible executes all shits with the current logged user
+  # using `become` it will become root (or will sudo cmd)
+  # become_user: vnj
+  become: no
+
+
+  tasks:
+    - name: Create working directory
+      file:
+        dest: ~/tmp/kookbook/code
+        state: directory
+
+    - name: Get latest application code from Github
+      git:
+        repo: git@github.com:vanjiii/kook-book-server
+        # tag, commit sha, branch name
+        version: master
+        dest: ~/tmp/kookbook/code
+
+    - name: Install project deps
+      go_mod:
+        name: "kook-book-server"
+        state: present
+        executable: go
+      # for python it may look something like this
+      # pip:
+      #   chdir: code/ # it is relative path
+      #   requirements: "requirements.txt"
+      #   state: present
