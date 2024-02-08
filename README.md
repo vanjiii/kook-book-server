@@ -8,3 +8,6 @@ The goal of the project it to practice and sharp my web development skills.
 ## Quick start
 
 ## Documentation
+
+### Familly projects
+https://github.com/vanjiii/kook-book-ansible
