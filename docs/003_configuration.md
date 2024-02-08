@@ -1,5 +1,7 @@
 # Configuration Management
 
+Repo with ansible config: github.com/vanjiii/kook-book-ansible
+
 **Configuration management** is the systematic management of software,
 hardware, and system configurations to ensure consistency and reliability. Why: <br>
 - Consistency: ensures all systems are in a known and a consistent state
