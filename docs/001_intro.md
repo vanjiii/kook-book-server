@@ -174,3 +174,13 @@ Six principles of microservices:
 Conway's rule: any organization that designs a system (defined broadly) will
 produce a design whose structure is a copy of the organization's communication
 structure.
+
+## Additional Resources
+
+- https://www.goodreads.com/list/show/110058.DevOps_must_to_read_list
+- https://www.goodreads.com/book/show/23131211-the-practice-of-cloud-system-administration
+- https://podcasts.apple.com/us/podcast/devops-cafe-podcast/id371931111
+- https://www.infoq.com/engineering-culture-podcast/
+- https://www.thoughtworks.com/insights/podcasts
+- https://www.goodreads.com/book/show/39677052-ahead-in-the-cloud
+- https://www.reddit.com/r/devops/
