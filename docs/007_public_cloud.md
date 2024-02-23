@@ -55,3 +55,57 @@ It gives **programmable resources** that are available (loan). They are
 - Platform Perspective (compute, network, storage, database provisioning, systems and solution architecture, application development)
 - Security Perspective (identity access manangement, detective control, infra security, data protection, incident response)
 - Operation Perspective (service monitoring, app performance monitoring, resource inventory management, release management, reporting and analytics, disaster recovery, it service catalog)
+
+Data center.<br>
+Availability zone - multiple data centers in one area.<br>
+Region - multiple AZ.<br>
+AWS backbone network - local network between regions.<br>
+
+S3 - object storage (you modify the whole object, not like the blob storage)
+- WORM (write once, read many)
+- avoid when:
+  - long-term archival storage
+  - block storage
+  - frequently changes
+
+Elastic Compute Cloud - EC2
+- virtual machine
+- AMI - amazon machine images
+
+Virtual Private Cloud - VPC
+- private network within AWS
+- internet gateway
+- nat gateway (located within public network)
+
+Databases
+- RDS
+  - comes with engine on demand (psql, mysql, oracle, etc)
+- Redshift
+- Aurora
+  - compatible with psql or mysql
+  - better performance (3x better that psql ..?!)
+- DinamoDB
+  - manage table
+- ElasticCache
+- Neptune
+
+Containers:
+- Elastic container registry - ECR
+- Elastic Container Service - ECS (managing containers)
+- Elastic Kubernetes Service - EKS (managed k8s cluster)
+- hosting on:
+  - EC2
+  - Fargate
+
+Serverless - deploy code (go, ruby, ..); and wait event trigger.
+- example:
+  - on upload in s3 (s3 event)
+  - execute labda function
+    - process the file
+  - save to (another) s3 bucket
+
+Resources:
+- https://wa.aws.amazon.com/wat.map.en.html
+- https://wellarchitecuredlabs.com
+- https://workshops.aws
+- https://catalog.workshops.aws
